@@ -9,6 +9,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import { ChangePasswordComponent } from './change-password/change-password.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { ChangePasswordComponent } from './change-password/change-password.compo
     NotFoundComponent,
     LoginComponent,
     SignupComponent,
-    ChangePasswordComponent
+    ChangePasswordComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
