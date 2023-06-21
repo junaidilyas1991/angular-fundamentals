@@ -11,16 +11,25 @@ import { SignupComponent } from './signup/signup.component';
 import { ChangePasswordComponent } from './change-password/change-password.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { InputFormatDirective } from './directives/input-format.directive';
+import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 
 @NgModule({
   declarations: [
+    // components
     AppComponent,
     HomeComponent,
     NotFoundComponent,
     LoginComponent,
     SignupComponent,
     ChangePasswordComponent,
-    NavbarComponent
+    NavbarComponent,
+
+    // directives
+    InputFormatDirective,
+     ForgotPasswordComponent
+
+    // pipes
   ],
   imports: [
     BrowserModule,
