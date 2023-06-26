@@ -15,12 +15,15 @@
       </button>
     </div>
     <div class="hidden lg:flex lg:gap-x-12">
-      <a href="#" class="text-sm font-semibold leading-6 text-gray-900">Features</a>
-      <a href="#" class="text-sm font-semibold leading-6 text-gray-900">Marketplace</a>
-      <a href="#" class="text-sm font-semibold leading-6 text-gray-900">Company</a>
+      <a routerLink="/" routerLinkActive="text-gray-900" class="text-sm font-semibold leading-6 text-gray-900">Home</a>
+      <a routerLink="/posts" routerLinkActive="text-gray-900" class="text-sm font-semibold leading-6 text-gray-500">Posts</a>
+      <a routerLink="/followers" [queryParams]="{page: 1, order: 'newest'}" routerLinkActive="text-gray-900" class="text-sm font-semibold leading-6 text-gray-500">Followers</a>
+<!--      <a *ngIf="authService.isLoggedIn() && authService.currentUser.admin" routerLink="/admin" routerLinkActive="text-gray-900" class="text-sm font-semibold leading-6 text-gray-900">Admin</a>-->
+      <a *ngIf="authService.isLoggedIn() && authService.currentUser" routerLink="/admin" routerLinkActive="text-gray-900" class="text-sm font-semibold leading-6 text-gray-900">Admin</a>
     </div>
     <div class="hidden lg:flex lg:flex-1 lg:justify-end">
-      <a routerLink="/login" class="text-sm font-semibold leading-6 text-gray-900">Log in <span aria-hidden="true">&rarr;</span></a>
+      <a *ngIf="!authService.isLoggedIn()" routerLink="/login" class="text-sm font-semibold leading-6 text-gray-900">Log in <span aria-hidden="true">&rarr;</span></a>
+      <a *ngIf="authService.isLoggedIn()" (click)="authService.logout()" class="text-sm font-semibold leading-6 text-gray-900">Log out <span aria-hidden="true">&rarr;</span></a>
     </div>
   </nav>
   <!-- Mobile menu, show/hide based on menu open state. -->
@@ -71,7 +74,7 @@
             <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Company</a>
           </div>
           <div class="py-6">
-            <a routerLink="/login" class="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Log in</a>
+            <a href="#" class="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Log in</a>
           </div>
         </div>
       </div>
