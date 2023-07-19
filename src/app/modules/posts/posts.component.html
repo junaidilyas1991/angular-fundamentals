@@ -17,12 +17,12 @@
           </div>
         </div>
       </div>
-      
+
       <ul role="list" class="divide-y divide-gray-100">
       <li class="flex justify-between gap-x-6 py-5" *ngFor="let post of posts">
         <div class="flex gap-x-4">
           <div class="min-w-0 flex-auto">
-            <p class="text-sm font-semibold leading-6 text-gray-900">{{ post && post.title }}</p>
+            <p class="text-sm font-semibold leading-6 text-gray-900">{{ post && post.title | summary:30 }}</p>
           </div>
         </div>
         <div class="hidden sm:flex sm:flex-col sm:items-end">
@@ -31,5 +31,5 @@
       </div>
       </li>
       </ul>
-    
+
 </div>

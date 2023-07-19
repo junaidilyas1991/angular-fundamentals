@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { NotFoundError } from '../common/not-found-error';
-import { AppError } from '../common/app-error';
-import { BadInput } from '../common/bad-input';
-import { DataService } from '../services/data.service';
+import { NotFoundError } from '../../common/not-found-error';
+import { AppError } from '../../common/app-error';
+import { BadInput } from '../../common/bad-input';
+import { DataService } from '../../services/data.service';
 
 @Component({
   selector: 'app-posts',

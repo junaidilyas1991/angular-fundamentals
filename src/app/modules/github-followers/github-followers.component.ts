@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { DataService } from '../services/data.service';
+import { DataService } from '../../services/data.service';
 import { ActivatedRoute } from '@angular/router';
 import { switchMap } from 'rxjs/operators';
 import { combineLatest } from 'rxjs';
@@ -25,7 +25,7 @@ export class GithubFollowersComponent implements OnInit{
       switchMap(combined => {
         let id = combined[0].get('id');
         let page = combined[1].get('page');
-  
+
         // Perform further processing based on 'id' and 'page'
         console.log(id, page);
 
@@ -38,5 +38,5 @@ export class GithubFollowersComponent implements OnInit{
 
 
   }
-  
+
 }
